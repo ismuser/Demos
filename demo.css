@@ -1,0 +1,258 @@
+      html {
+        overflow-y: scroll;
+      }
+
+      hr.soften3 {
+        height: 1px;
+        margin-top: 20px;
+        background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.5), rgba(255,255,255,0));
+        background-image:    -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.5), rgba(255,255,255,0));
+        background-image:     -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.5), rgba(255,255,255,0));
+        background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,.5), rgba(255,255,255,0));
+        border: 0;
+      }
+
+      hr.soften {
+        height: 1px;
+        margin-top: 50px;
+        background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+        background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+        background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+        background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+        border: 0;
+      }
+      hr.soften2 {
+        height: 1px;
+        margin-top: 10px;
+        background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        border: 0;
+      }
+
+      .rainbow-container {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 60px;
+        height: 100px;
+        background: #130c3f; /* Old browsers */
+        background: -moz-linear-gradient(left,  #130c3f 0%, #132f60 9%, #1b6489 21%, #1b8966 33%, #91bc23 50%, #c9c920 65%, #cc8a20 80%, #a03a1b 92%, #5b220f 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,#130c3f), color-stop(9%,#132f60), color-stop(21%,#1b6489), color-stop(33%,#1b8966), color-stop(50%,#91bc23), color-stop(65%,#c9c920), color-stop(80%,#cc8a20), color-stop(92%,#a03a1b), color-stop(100%,#5b220f)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left,  #130c3f 0%,#132f60 9%,#1b6489 21%,#1b8966 33%,#91bc23 50%,#c9c920 65%,#cc8a20 80%,#a03a1b 92%,#5b220f 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left,  #130c3f 0%,#132f60 9%,#1b6489 21%,#1b8966 33%,#91bc23 50%,#c9c920 65%,#cc8a20 80%,#a03a1b 92%,#5b220f 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(left,  #130c3f 0%,#132f60 9%,#1b6489 21%,#1b8966 33%,#91bc23 50%,#c9c920 65%,#cc8a20 80%,#a03a1b 92%,#5b220f 100%); /* IE10+ */
+        background: linear-gradient(to right,  #130c3f 0%,#132f60 9%,#1b6489 21%,#1b8966 33%,#91bc23 50%,#c9c920 65%,#cc8a20 80%,#a03a1b 92%,#5b220f 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130c3f', endColorstr='#5b220f',GradientType=1 ); /* IE6-9 */
+      }
+
+      .rainbow-container p {
+        font-size: 40px;
+        font-weight: 200;
+        line-height: 1.25;
+        color: #fff;
+      }
+
+      #header {
+        background-repeat: repeat;
+        background-image: url('http://assets.ismuser.com/demo/bg-header.png');
+        -webkit-box-shadow: 0px 8px 13px rgba(50, 50, 50, 0.63);
+        -moz-box-shadow:    0px 8px 13px rgba(50, 50, 50, 0.63);
+        box-shadow:         0px 8px 13px rgba(50, 50, 50, 0.63);
+      }
+
+      #logo {
+        float: left;
+        width: 125px;
+        height: 40px;
+      }
+
+      #btn-get-started {
+        margin-top: 20px;
+      }
+
+      #howto {
+        margin-top: 40px;
+        font-size: 16px;
+      }
+
+      h1 {
+        margin-top: 10px;
+        line-height: 1;
+        font-size: 3em;
+        letter-spacing: -2px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      #container {
+        width: 940px;
+        margin: 0px auto;
+      }
+
+      .bordered {
+        -webkit-border-radius: 6px 6px 6px 6px;
+        -moz-border-radius: 6px 6px 6px 6px;
+        border-radius: 6px 6px 6px 6px;
+        border: 1px solid #000000;
+        overflow: auto;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: 200;
+        line-height: 1;
+        letter-spacing: -1px;
+        color: #5a5a5a;
+      }
+
+      p.sub-claim {
+        font-size: 20px;
+      }
+
+      p.subtitle {
+        margin-top: -20px;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 300;
+        line-height: 1.25;
+        color: #999;
+      }
+
+      .ism-btn-rainbow {
+        font-size: 24px;
+        font-weight: 200;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      #demo-bottom-claim {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 23%;
+      }
+
+      #arrow-bottom-claim {
+        background-image: url('http://assets.ismuser.com/images/arrow-bottom-claim.png');
+        width: 120px;
+        height: 190px;
+        position: absolute;
+        top: 70px;
+        right: 240px;
+      }
+
+.ism-btn-rainbow {
+  font-size: 24px;
+  font-weight: 200;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+      /* footer */
+.subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.25;
+  color: #999;
+}
+
+#more-info {
+  background-image: url('http://assets.ismuser.com/images/more-info.png');
+  width: 400px;
+  height: 128px;
+  position: relative;
+  left: 550px;
+  top: -45px;
+  opacity: 0.7;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+#more-info:hover {
+  background-image: url('http://assets.ismuser.com/images/more-info.png');
+  width: 400px;
+  height: 128px;
+  position: relative;
+  left: 550px;
+  top: -45px;
+  opacity: 1;
+}
+
+#bugs p {
+  font-size: 16px;
+}
+
+/* footer */
+
+#triangle {
+  margin-top: 40px;
+  margin-bottom: -1px;
+}
+
+.dark-anchor a {
+  color: #fff;
+  color: rgba(255,255,255,.5);
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.dark-anchor a:hover {
+  color: #fff;
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+}
+
+footer {
+  background-color: #000000;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  margin-bottom: 0px;
+}
+
+#footer-container {
+  width: 100%;
+  margin-bottom: -1px;
+}
+
+#footer-triangle {
+  margin-left: auto;
+  margin-right: auto;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent #000000 transparent;
+}
+
+#footer-nav {
+  margin-top: 25px;
+}
+
+#footer-nav p {
+  color: #fff;
+  font-size: 16px;
+}
+
+#footer-nav h2 {
+  font-weight: 200;
+  font-size: 16px;
+}
+
+#footer-copyright {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #555;
+}  
+
+footer a:hover { 
+  color: #222;
+}

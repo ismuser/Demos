@@ -1,0 +1,207 @@
+<html>
+  <head>
+    <title>Ismuser - Demo</title>    
+    <link href="http://assets.ismuser.com/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="demo.css" rel="stylesheet" media="screen">
+
+    <style type="text/css">
+
+      #board {
+        margin-top: 10px;
+        width: 100%;
+        height: 400px;
+        float: left;
+      }
+      #logo {
+          height: 60px;
+          width: 200px;
+      }
+      #guest {
+        /* Must be modify by user */
+        margin-top: 25px;
+        height: 120px;
+        width: 100%;
+        float: right;
+      }
+
+      #chat {
+        /* Must be modify by user */
+        margin-top: 10px;
+        width: 100%;
+        height: 250px;
+        float: right;
+      }
+
+      #linkShared {
+        margin-right: 220px;
+        margin-top: 10px;
+        float: right;
+        color: #FFFFFF;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <header class="navbar navbar-fixed-top navbar-static-top navbar-inverse">
+          <div class="navbar-inner" id="header">
+            <div class="container">
+              <a href="http://ismuser.com"><img src="http://assets.ismuser.com/demo/ism-logo-white.png" alt="Ismuser" id="logo"></a>
+              <a id="linkShared"> http://demo.ismuser.com/demo2.html </a>
+            </div>
+          </div>
+    </header>
+
+    <div id="top" class="rainbow-container">
+        <div class="container">
+          <div class="row">
+            <div class="span7" id="claim">
+              <p>Demo</p>
+              <p class="sub-claim">What you see is not just what you get. You get more.</p>
+            </div>
+            <div class="span5">
+              <img src="http://assets.ismuser.com/images/top-claim.png" alt="Share the URL">
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="container">
+
+      <div class="row">
+        <div class="span12">
+          <h1 style="margin-top: 40px;">Customize <span style="color: #ff551c">everything</span>. Embed <span style="color: #ff551c">everywhere</span>.</h1>
+          <p class="subtitle">Take a look of more different Ismuser configurations: <a href="http://demo.ismuser.com">Demo 1</a> - <a href="demo3.html">Demo 3</a> - <a href="demo4.html">Demo 4</a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span12">
+
+            <!-- Contenedor para insertar la cam de los guest -->
+            <div id="guest" class="bordered">
+              <!-- CODE INJECTED BY API HERE -->
+            </div>
+
+            <!-- Contenedor para insertar la pizarra -->
+            <div id="board" class="bordered">
+              <!-- CODE INJECTED BY API HERE -->
+            </div>
+            <!--  Fin del código HTML de la pizarra -->
+            <br />
+            <!-- Contenedor para insertar el chat -->
+            <div id="chat" class="bordered">
+              <!-- CODE INJECTED BY API HERE -->
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <hr class="soften">
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <h1>Start using <span style="color: #ff551c">Ismuser</span>.</h1>
+          <p class="subtitle">What are you waiting for? Ismuser is currently in beta and for the time being it's free!</p>
+        </div>
+    
+        <div id="howto" class="span12">
+          <div class="row text-center">
+            <a href="http://ismuser.com/users/sign_up" class="btn btn-success btn-large ism-btn-rainbow" id="btn-get-started">Get Started</a>
+            <a href="http://ismuser.com/docs"><div id="more-info"></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container" style="margin-bottom: -1px;">
+        <div class="row" id="triangle">
+          <div class="span12">
+            <div id="footer-triangle"></div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer dark-anchor">
+        <div class="container">
+          <div class="row" id="footer-nav">
+            <div class="span4 text-center">
+              <p><b class="icon-heart icon-white"></b> <strong>Product</strong></p>
+            </div>
+            <div class="span4 text-center">
+              <p><b class="icon-home icon-white"></b> <strong>Company</strong></p>
+            </div>
+            <div class="span4 text-center">
+              <p><b class="icon-user icon-white"></b> <strong>Social</strong></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4 text-left">
+              <div style="margin-left: 115px;">
+                <a href="http://ismuser.com/users/sign_in">Sign in</a><br />
+                <a href="http://ismuser.com/users/sign_up">Sign up</a><br />
+                <a href="http://ismuser.com/docs">Documentation</a><br />
+                <a href="http://ismuser.com/pricing">Pricing</a>
+              </div>
+            </div>
+            <div class="span4 text-left">
+              <div style="margin-left: 110px;">
+                <a href="http://www.github.com/ismuser" target="_blank">Github</a><br />
+                <a href="http://ismuser.com/bugs">Bugs</a><br />
+              </div>
+            </div>
+            <div class="span4 text-left">
+              <div style="margin-left: 123px;">
+                <a href="http://blog.ismuser.com" target="_blank">Blog</a><br />
+                <a href="http://www.twitter.com/ismuser" target="_blank">Twitter</a><br />
+                <a href="http://www.facebook.com/ismuser" target="_blank">Facebook</a><br />
+                <a href="http://ismuser.com/contact">Contact</a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <hr class="soften3">
+            </div>
+          </div>
+          <div class="row" id="footer-copyright">
+            <div class="span6">
+              <small>Developed and designed by <a href="http://21ninjas.es" target="_blank">21ninjas</a></small>
+            </div>
+            <div class="span6">
+              <p class="pull-right">
+                <a href="http://ismuser.com/tos">Terms of service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="http://ismuser.com/privacy">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+                21ninjas S.L. &copy; 2013
+              </p>
+            </div>
+          </div>
+        <div>
+      </footer>
+    </div>
+
+    <script type="text/javascript">
+      function ismready() 
+      {
+        var API_KEY = ""; // enter your apikey  here 
+        var roomId  = ""; // enter your rooomid here
+
+        var ism = new Ismuser(API_KEY, roomId);
+        ism.init
+        ({
+          board: { layer: "board" },
+          video: { camsContainer: "guest" },
+          chat:  { layer: "chat" },
+          moderator: true
+        });
+      }
+    </script>
+    <script src="http://assets.ismuser.com/v0.4/js/ismuser.js" type="text/javascript"></script>
+  </body>
+</html>

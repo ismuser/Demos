@@ -1,0 +1,468 @@
+<html>
+  <head>
+    <title>Ismuser - Demo</title>
+    <link href="http://assets.ismuser.com/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="http://demo.ismuser.com/demo.css" rel="stylesheet" media="screen">
+    <link href="http://assets.ismuser.com/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+
+      header a {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 200;
+        color:#999999;
+        -webkit-transition: all .2s ease-in-out;
+        -webkit-transition-property: all;
+        -webkit-transition-duration: 0.2s;
+        -webkit-transition-timing-function: ease-in-out;
+        -webkit-transition-delay: initial;
+        -moz-transition: all .2s ease-in-out;
+        transition-property: all;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        transition-delay: initial;
+      }
+
+      header a:hover {
+        color:#FFFFFF;
+        text-decoration:none;
+      }
+
+      #header {
+        margin-top: 10px;
+      }
+
+      #api-container {
+        min-width: 1024px;
+        width: -webkit-calc(100% - 20px);
+        width: -moz-calc(100% - 20px);
+        width: -o-calc(100% - 20px);
+        width: calc(100% - 20px);
+        margin: 0 auto;
+        border: 1px solid gray;
+        height: -webkit-calc(100% - 150px);
+        height: -moz-calc(100% - 150px);
+        height: -o-calc(100% - 150px);
+        height: calc(100% - 150px);
+        margin-top: 30px;
+      }
+
+      #board {
+        height: -webkit-calc(100% - 150px);
+        height: -moz-calc(100% - 150px);
+        height: -o-calc(100% - 150px);
+        height: calc(100% - 150px);
+        width: 69%;
+        right: 10px;
+        display: none;
+        z-index: 20;
+        position: absolute;
+      }
+
+      #guest {
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+        margin: 0 auto;
+      }
+
+      #chat, #user-list {
+        position: absolute;
+        width: 300px;
+        margin-top: 38px;
+        height: 500px;
+        right: 16px;
+        z-index: 99;
+        display: none;
+      }
+
+      .tab {
+        font-family: Helvetica, sans-serif;
+        position: absolute;
+        z-index: 50;
+        right: 0px;
+        margin-top: -35px;
+        margin-right: 9px;
+        margin-bottom: 0px;
+      }
+
+      #user-list {
+        top: 0;
+        right: 0;
+        margin: 0;
+        overflow: visible;
+        position: absolute;
+        z-index: 99;
+        background-color: #e7e7e7;
+        display: none;
+        border: 0;
+        width: 300px;
+        height: 500px;
+        z-index: 99;
+        display: none;
+      }
+
+      #list-tab {
+        display: none;
+        right: 7px;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+
+      .nickname, .mynickname {
+        font-family: Helvetica, sans-serif, arial;
+        background-color: whitesmoke;
+        padding: 2px 2px 2px 7px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        margin: 3px 3px 5px 3px;
+        z-index: 999;
+      }
+      #board-tab {
+        margin-right:90px;
+      }
+
+      .nickname a {
+        cursor: default;
+        color: black;
+        font-family: Helvetica, sans-serif;
+      }
+
+      .nickname a:hover {
+        text-decoration: none;
+      }
+
+      .mynickname {
+        cursor: pointer;
+      }
+
+      .mynickname a {
+        color: black;
+        font-family: Helvetica, sans-serif;
+        -webkit-transition: 0.6s;
+        -moz-transition: 0.6s;
+        -o-transition: 0.6s;
+        transition: 0.6s;
+      }
+
+      .mynickname:hover > a {
+        text-decoration: none;
+        color: orangered;
+      }
+
+      .rainbow-nav {
+        width: 100%;
+        height: 10px;
+        background: #130c3f;
+        background: -moz-linear-gradient(left, #130c3f 0%, #132f60 9%, #1b6489 21%, #1b8966 33%, #91bc23 50%, #c9c920 65%, #cc8a20 80%, #a03a1b 92%, #5b220f 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%,#130c3f), color-stop(9%,#132f60), color-stop(21%,#1b6489), color-stop(33%,#1b8966), color-stop(50%,#91bc23), color-stop(65%,#c9c920), color-stop(80%,#cc8a20), color-stop(92%,#a03a1b), color-stop(100%,#5b220f));
+        background: -webkit-linear-gradient(left, #130c3f 0%,#132f60 9%,#1b6489 21%,#1b8966 33%,#91bc23 50%,#c9c920 65%,#cc8a20 80%,#a03a1b 92%,#5b220f 100%);
+        background: -o-linear-gradient(left, #130c3f 0%,#132f60 9%,#1b6489 21%,#1b8966 33%,#91bc23 50%,#c9c920 65%,#cc8a20 80%,#a03a1b 92%,#5b220f 100%);
+        background: -ms-linear-gradient(left, #130c3f 0%,#132f60 9%,#1b6489 21%,#1b8966 33%,#91bc23 50%,#c9c920 65%,#cc8a20 80%,#a03a1b 92%,#5b220f 100%);
+        background: linear-gradient(to right, #130c3f 0%,#132f60 9%,#1b6489 21%,#1b8966 33%,#91bc23 50%,#c9c920 65%,#cc8a20 80%,#a03a1b 92%,#5b220f 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130c3f', endColorstr='#5b220f',GradientType=1 );
+        }
+
+      #logo {
+          height: 60px;
+          width: 200px;
+      }
+
+      i {
+        margin-right: 5px;
+      }
+
+      hr.soften2 {
+        height: 1px;
+        margin-top: 10px;
+        background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        border: 0;
+      }
+
+      hr.soften4 {
+        height: 1px;
+        margin-top: 30px;
+        background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.9), rgba(0,0,0,0));
+        border: 0;
+      }
+    </style>
+
+    <script type="text/javascript">
+      $(document).ready(function() 
+      {
+        $('#board-tab').click(function() 
+        {
+          $('#board').toggle("ease", function () 
+          {
+            if ($('#board').is(":hidden")) 
+              $('#guest').animate({ width: "100%" }, "ease",   function () {OT_LayoutContainer.layout();});
+            else 
+              $('#guest').animate({ width: "29%" }, "ease", function () {OT_LayoutContainer.layout();});
+          });
+        });
+
+        $('#chat-tab').click(function()
+        {
+          $('#chat').toggle("ease");
+          $('#list-tab').toggle("linear");
+        });
+
+        $('#list-tab').click(function() { $('#user-list').toggle("linear"); });
+      });
+      function okClicked()
+      {
+        $('#modal').modal('toggle');
+        ism.setUserName($("#Nick").val());
+      }
+    </script>
+
+  </head>
+  <body>
+  <div class="rainbow-nav"></div>
+
+    <div class="container" style="margin-top: 10px">
+      <div class="row">
+        <div class="span3">
+          <a href="http://ismuser.com"><img src="http://assets.ismuser.com/images/ism-logo-black.png" alt="Ismuser" id="demologo"></a>
+        </div>
+        <img style="width=90%; margin-left:75px; margin-top:13px;" src="http://assets.ismuser.com/images/arrow-demo-show.png">
+       <!-- <div class="span6 text-right" style="margin-top: 5px;">-->
+            <ul class="inline" style="margin-top:25px; float:right; display: inline;">
+                <li></li>
+                <li><a style="margin-top=15px;" href="http://demo.ismuser.com">Demo 1</a></li>
+                -
+                <li><a href="http://demo.ismuser.com/demo2.html">Demo 2</a></li>
+                -
+                <li><a href="http://demo.ismuser.com/demo3.html">Demo 3</a></li>
+            </ul>
+           <!-- </div>-->
+        </div>
+      <div class="row">
+        <div class="span12">
+          <hr class="soften2">
+        </div>
+      </div>
+    </div>
+    <div id="api-container" class="container">
+
+      <div id="board-tab" class="tab btn btn-success"><i class="icon-list-alt icon-white"></i>Magic Board</div>
+      <div id="chat-tab" class="tab btn btn-info"><i class="icon-pencil icon-white"></i>Chat</div>
+
+      <!-- Contenedor para insertar la cam de los guest -->
+          <div id="guest">
+            <!-- CODE INJECTED BY API HERE -->
+          </div>
+
+      <!-- Contenedor para insertar la pizarra -->
+          <div id="board">
+            <!-- CODE INJECTED BY API HERE -->
+          </div>
+          <!--  Fin del código HTML de la pizarra -->
+          <div id="list-tab" class="tab btn btn-primary"><i class="icon-user icon-white"></i>Users</div>
+      <!-- Contenedor para insertar el chat -->
+          <div id="chat">
+            <!-- CODE INJECTED BY API HERE -->
+              <div id="user-list" class="bordered"></div>
+          </div>
+      <div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+        <div class="modal-header">
+          <a href="#" class="close" data-dismiss="modal"><i class="icon-remove"></i></a>
+          <h3>Elige tu nuevo nick</h3>
+        </div>
+        <div class="modal-body">
+          <div class="divDialogElements">
+            Nick    <input class="xlarge" id="Nick"   style="margin-top:8px;margin-left:5px;" name="xlInput" type="text">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn btn-primary" onclick="okClicked ();">OK</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <hr class="soften4">
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <h1>Start using <span style="color: #ff551c">Ismuser</span>.</h1>
+          <p class="subtitle">What are you waiting for? Ismuser is currently in beta and for the time being it's free!</p>
+        </div>
+    
+        <div id="howto" class="span12">
+          <div class="row text-center">
+            <a href="http://ismuser.com/users/sign_up" class="btn btn-success btn-large ism-btn-rainbow" id="btn-get-started">Get Started</a>
+            <a href="http://ismuser.com/docs"><div id="more-info"></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="footer">
+<div class="container" style="margin-bottom: -1px;">
+  <div class="row" id="triangle">
+    <div class="span12">
+      <div id="footer-triangle"></div>
+    </div>
+  </div>
+</div>
+<footer class="footer dark-anchor">
+  <div class="container">
+    <div class="row" id="footer-nav">
+      <div class="span4 text-center">
+        <p><b class="icon-heart icon-white"></b> <strong>Product</strong></p>
+      </div>
+      <div class="span4 text-center">
+        <p><b class="icon-home icon-white"></b> <strong>Company</strong></p>
+      </div>
+      <div class="span4 text-center">
+        <p><b class="icon-user icon-white"></b> <strong>Social</strong></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4 text-left">
+        <div style="margin-left: 115px;">
+          <a href="http://ismuser.com/users/sign_in">Sign in</a><br />
+          <a href="http://ismuser.com/users/sign_up">Sign up</a><br />
+          <a href="http://ismuser.com/docs">Documentation</a><br />
+          <a href="http://ismuser.com/pricing">Pricing</a>
+        </div>
+      </div>
+      <div class="span4 text-left">
+        <div style="margin-left: 110px;">
+          <a href="http://ismuser.com/support">Support</a><br />
+          <a href="http://www.github.com/ismuser" target="_blank">Github</a><br />
+          <a href="http://ismuser.com/bugs">Bugs</a><br />
+        </div>
+      </div>
+      <div class="span4 text-left">
+        <div style="margin-left: 123px;">
+          <a href="http://blog.ismuser.com" target="_blank">Blog</a><br />
+          <a href="http://www.twitter.com/ismuser" target="_blank">Twitter</a><br />
+          <a href="http://www.facebook.com/ismuser" target="_blank">Facebook</a><br />
+          <a href="http://ismuser.com/contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <hr class="soften3">
+      </div>
+    </div>
+    <div class="row" id="footer-copyright">
+      <div class="span6">
+        <small>Developed and designed by <a href="http://21ninjas.es" target="_blank">21ninjas</a></small>
+      </div>
+      <div class="span6">
+        <p class="pull-right">
+          <a href="http://ismuser.com/tos">Terms of service</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="http://ismuser.com/privacy">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+          21ninjas S.L. &copy; 2013
+        </p>
+      </div>
+    </div>
+  <div>
+</footer>
+</div>
+
+    <script type="text/javascript">
+      function ismready() 
+      {
+        var API_KEY = ""; // enter your apikey  here 
+        var roomId  = ""; // enter your rooomid here
+
+        ism = new Ismuser(API_KEY, roomId);
+        ism.init
+        ({
+          board: { layer: "board" },
+          video: { camsContainer: "guest" },
+          chat:  { layer: "chat"  },
+          moderator: true,
+          events:
+          {
+            user:
+            {
+              userConnected: function (e) 
+              {
+                var user = e.detail;
+                mod      = "";
+                myuser   = "";
+                if (user.getId() == ism.getMyUser().getId())
+                {
+                  myuser = "my";
+                  mod = "<i class='icon-user'></i>"
+                }                
+                if (user.isModerator()) mod = "<i class='icon-star'></i>" + mod;
+                $('#user-list').append
+                (
+                  "<p class='" + myuser + "nickname'> \
+                    <a href='#modal' \
+                       id='" + user.getId() + "' \
+                       data-toggle='modal' data-target='#modal'>" + mod + user.getName() + 
+                    "</a>\
+                  </p>"
+                );
+              },
+              usersConnectedList: function (e)
+              {
+                mod = "";
+                var userList = e.detail;
+                for (var u = 0; u < userList.length; u++) 
+                {
+                  if (userList[u].isModerator()) mod = "<i class='icon-star'></i>";
+                  else mod = "";
+                  $('#user-list').append
+                  (
+                    "<p class='nickname'> \
+                      <a href='#modal'  \
+                        id='" + userList[u].getId() + 
+                        "' data-toggle='modal' \
+                           data-target='#modal'>"
+                           + mod + userList[u].getName() +
+                      "</a> \
+                    </p>"
+                  );
+                }
+              },
+              userUpdated: function (e) 
+              {
+                var user = e.detail.user, key = e.detail.key, value = e.detail.value;
+                
+                if (key == 'moderator')
+                  $('#' + user.getId()).prepend("<i class='icon-star'></i>");
+
+                if (key == 'name')
+                  $("#" + user.getId()).html(
+                    $("#" + user.getId())
+                      .html()
+                      .substr(0, $("#" + user.getId()).html().lastIndexOf('>') + 1 ) + value
+                  );
+              },
+              userDisconnected: function (e)
+              { 
+                var user = e.detail; 
+                $('#' + user.getId()).parent().remove();
+              }
+            }
+          }
+        });
+      }
+    </script>
+
+    <script src="http://assets.ismuser.com/v0.4/js/ismuser.js" type="text/javascript"></script>
+
+  </body>
+</html>
