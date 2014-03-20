@@ -1,4 +1,4 @@
 Demos
 =====
 
-Ismuser public demos (find them working at www.ismuser.com/demo)
+Ismuser public demos (find them working at demo.ismuser.com)
